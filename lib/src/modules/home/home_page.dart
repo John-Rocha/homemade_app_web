@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/env/env.dart';
 import '../../core/ui/helpers/loader.dart';
 import '../../core/ui/helpers/messages.dart';
+import '../../core/ui/helpers/size_extensions.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -18,15 +19,24 @@ class _HomePageState extends State<HomePage> with Loader, Messages {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
-      body: Container(
-        child: Text(Env.instance.get('backend_base_url')),
+      body: Center(
+        child: Container(
+          color: Colors.red,
+          width: context.percentWidth(.5),
+          height: context.percentHeight(.5),
+          child: Center(
+            child: Text(
+              context.screenWidth.toString(),
+            ),
+          ),
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           showLoader();
           await Future.delayed(const Duration(seconds: 2));
           hideLoader();
-          showError('Erro de alguma coisa');
+          showInfo('Erro de alguma coisa');
         },
       ),
     );
