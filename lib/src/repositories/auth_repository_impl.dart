@@ -6,9 +6,9 @@ import '../core/exceptions/repository_exception.dart';
 import '../core/exceptions/unauthorized_exception.dart';
 import '../core/rest_client/custom_dio.dart';
 import '../models/auth_model.dart';
-import './auth_respository.dart';
+import 'auth_repository.dart';
 
-class AuthRespositoryImpl implements AuthRespository {
+class AuthRespositoryImpl implements AuthRepository {
   final CustomDio _customDio;
 
   AuthRespositoryImpl(this._customDio);
