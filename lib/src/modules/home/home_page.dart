@@ -14,35 +14,33 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> with Loader, Messages {
   @override
   Widget build(BuildContext context) {
-    return BaseLayout(
-      body: Center(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20),
-              child: Form(
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                child: TextFormField(
-                  validator: (value) => 'Erro!',
-                  decoration: const InputDecoration(
-                    label: Text('Teste'),
-                  ),
+    return Center(
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(20),
+            child: Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
+              child: TextFormField(
+                validator: (value) => 'Erro!',
+                decoration: const InputDecoration(
+                  label: Text('Teste'),
                 ),
               ),
             ),
-            const SizedBox(
-              height: 15,
+          ),
+          const SizedBox(
+            height: 15,
+          ),
+          SizedBox(
+            width: 200,
+            height: 75,
+            child: ElevatedButton(
+              onPressed: () {},
+              child: const Text('Teste'),
             ),
-            SizedBox(
-              width: 200,
-              height: 75,
-              child: ElevatedButton(
-                onPressed: () {},
-                child: const Text('Teste'),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
