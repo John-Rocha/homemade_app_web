@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
-import '../../shared/constants.dart';
+import '../../global/constants.dart';
+import '../../global/global_context.dart';
 import '../../storage/session_storage.dart';
 
 class AuthInterceptor extends Interceptor {
@@ -22,5 +23,11 @@ class AuthInterceptor extends Interceptor {
   void onError(
     DioError err,
     ErrorInterceptorHandler handler,
-  ) {}
+  ) {
+    if (err.response?.statusCode == 401) {
+      GlobalContext.instance.loginExpire();
+    } else {
+      handler.next(err);
+    }
+  }
 }

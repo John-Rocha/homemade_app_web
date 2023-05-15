@@ -1,4 +1,4 @@
-import '../../core/shared/constants.dart';
+import '../../core/global/constants.dart';
 import './login_service.dart';
 import '../../core/storage/session_storage.dart';
 import '../../repositories/auth_repository.dart';
