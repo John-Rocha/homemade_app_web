@@ -1,6 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import '../../repositories/auth_repository.dart';
-import '../../repositories/auth_repository_impl.dart';
+import '../../repositories/auth/auth_repository.dart';
+import '../../repositories/auth/auth_repository_impl.dart';
 import '../../services/auth/login_service.dart';
 import '../../services/auth/login_service_impl.dart';
 import './login_controller.dart';
